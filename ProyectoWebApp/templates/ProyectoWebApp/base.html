@@ -1,0 +1,81 @@
+<html>
+
+
+  <!-- Navbar -->
+
+
+  {% load static %}
+
+  <!-- Bootstrap -->
+  <link href="{% static 'ProyectoWebApp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+
+  <!-- Styles -->
+  <link href="{% static 'ProyectoWebApp/css/gestion.css' %}" rel="stylesheet">
+
+
+  <body>
+
+    
+    <div class="bg-dark text-center">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navg navbar-nav w-100 justify-content-center">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'Home' %}">Inicio<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% if request.path == '/servicios/' %}active{% endif %} px-lg-4">
+                <a class="nav-link" href="{% url 'Servicios' %}">Servicios</a>
+              </li>
+              <li class="nav-item {% if request.path == '/tienda/' %}active{% endif %} px-lg-4">
+                <a class="nav-link" href="{% url 'Tienda' %}">Tienda</a>
+              </li>
+              <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
+                <a class="nav-link" href="{% url 'Contacto' %}">Contacto</a>
+              </li>
+              <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
+                <a class="nav-link" href="{% url 'Blog' %}">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+
+<!-- Bootstrap -->
+<script src="{% static 'ProyectoWebApp/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'ProyectoWebApp/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+
+</html>
